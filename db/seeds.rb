@@ -16,7 +16,7 @@ l1 = Location.create(:city=> "Houston", :state=> "Texas", :zip_code=> 77888)
 e1 = Event.create(:name=>"Rock Concert", :category=> "Music", :description=>"Linkin Park is playing", :location_id=>l1.id)
 
 #User
-u1 = User.create(:fist_name=>"Adam", :last_name=> "Lambert")
+u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert")
 
 #User Events
-ue1 = UserEvent.create(:user_id=>u1_id, :event_id=>e1_id)
+ue1 = UserEvent.create(:user_id=>u1.id, :event_id=>e1.id)

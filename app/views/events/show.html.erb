@@ -1,0 +1,38 @@
+<h1><%=Event.name%></h1>
+
+<h1><%=@event.name%></h1>
+<hr>
+<%= link_to image_tag(@event.img_url, :size => '300x200')%>
+<hr>
+<p><%=@event.time_format%>
+<br>
+<br>
+<br>
+<h2>Description</h2>
+<hr>
+<%=@event.description%></p>
+<br>
+<br>
+<br>
+Catergory <br>
+<%@event.catergory.each do |cat|%>
+<%=cat%><br>
+<%end%>
+
+<h3>People Attending</h3>
+<% @event.users.each do |user|%>
+<%= link_to user.username, user_path(user)%><br>
+<%end%>
+<br>
+<br>
+<br>
+<%=link_to "RSVP", new_events_list_path%>
+<hr>
+<%= link_to 'See All Events', events_path%><br>
+<br>
+<br>
+<hr>
+<hr>
+Logged In As: <%=link_to session[:username], user_path(session[:id])%> 
+<br>
+<%= button_to 'log out', {:controller => :sessions, :action => 'destroy'}, :method => :delete%>
