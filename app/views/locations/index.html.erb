@@ -1,4 +1,8 @@
 <h1>Locations</h1>
-<%@locations.each do |location|%>
-<%=link_to location.name, event_path(event)%> - <%=event.time_format%><br><br>
+<%=@locations.each do |location|%>
+<%=location.city%>> <br><br>
+<%=location.event.each do |event|%>
+    <%=event.name%>
+    <%=event.city%>
+    <% end %>
 <%end%>

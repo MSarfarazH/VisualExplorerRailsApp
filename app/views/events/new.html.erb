@@ -1,0 +1,8 @@
+<h1> Choose Event </h1>
+<% form_for(@event) do |f| %>
+<%= f.collection_select(:category, Event.all, :id, :category) %>
+<%= f.collection_select(:description, Event.all, :id, :description) %>
+<%= f.collection_select(:location_id, Event.all, :id, :location_id) %>
+<%= f.collection_select(:name, Event.all, :id, :name)%>
+
+<% end %>

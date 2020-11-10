@@ -1,7 +1,7 @@
 <h1>Events</h1>
 
 <% @events.each do |event|%>
-<ul><h3><%= link_to event.name%></h3>
+<ul><h3><%= link_to event.name, event_path(event)%></h3>
 <h4>Category: <%=event.category%> <br>
 Description: <%=event.description%><h4></ul>
 <br>
