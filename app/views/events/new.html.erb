@@ -1,0 +1,23 @@
+<%= form_for @event do |f|%>
+<%=f.label "Event Name"%><br>
+<%=f.text_field :name%>
+<br>
+<br>
+<%=f.label "Category"%><br>
+ <%= f.collection_select(:category, Event.all, :id, :category)%>
+<br>
+<br>
+<%=f.label "Description"%><br>
+<%=f.text_field :description%>
+<br>
+<br>
+<%=f.label "Time"%><br>
+<%=f.datetime_field :time%>
+<br>
+<br>
+<%=f.label "Image URL"%><br>
+<%=f.text_field :img_url%>
+<br>
+<br>
+<%=f.submit%>
+<%end%>

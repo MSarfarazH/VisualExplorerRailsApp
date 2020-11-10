@@ -13,7 +13,11 @@ UserEvent.destroy_all
 l1 = Location.create(:city=> "Houston", :state=> "Texas", :zip_code=> 77888)
 
 #Events
-e1 = Event.create(:name=>"Rock Concert", :category=> "Music", :description=>"Linkin Park is playing", :location_id=>l1.id)
+e1 = Event.create(:name=>"Rock Concert", :category=> "Music", :description=>"Linkin Park is playing", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
+e2 = Event.create(:name=>"Rockets Vs Lakers", :category=> "Sports", :description=>"Finals Rockets vs Lakers", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
+e3 = Event.create(:name=>"History Exibition", :category=> "Educational", :description=>"See the dinosaurs and their era", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
+e4 = Event.create(:name=>"Comicon", :category=> "Recreational", :description=>"Houstons 5th ComiCon", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
+e5 = Event.create(:name=>"Professionals Convention", :category=> "Professional", :description=>"Houstons 5th Professional Convention", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
 
 #User
 u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert")

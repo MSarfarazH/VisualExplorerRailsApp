@@ -1,9 +1,8 @@
-<h1>UserEvents#new</h1>
-<%= form_for @userevent do |f| %>
-    <%= f.collection_select(:user_id, User.all, :id, :first_name) %> <br>
-    <%= f.collection_select(:event_id, Event.all, :id, :city) %><br><br>
-    <%= f.submit %>
+<h1>Attend Event</h1>
 
-<% end %>
+<%=form_with @userevent do |f|%>
+<%= f.submit 'Confirm'%>
+<%end%>
 
-<p>Find me in app/views/user_events/new.html.erb</p>
+
+
