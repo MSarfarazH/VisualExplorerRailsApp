@@ -1,6 +1,15 @@
 <h1>Welcome <%=@user.first_name%></h1>
 <p> Interested in: <%= @user.interest %> </p><br>
 <p> About me: <%= @user.bio %> </p><br>
-<p> Picture: <%= @user.img_url %> </p><br>
 
-<p>Find me in app/views/users/show.html.erb</p>
+Logged In As: <%=link_to session[:username], user_path(session)%> 
+<br>
+<%= button_to 'log out', {:controller => :sessions, :action => 'destroy'}, :method => :delete, class: "btn btn-primary"%>
+<hr>
+<% if session[:id] == @user.id %>
+<%# <%=form_for @user, method: :delete do |f|%>
+<%# <%=f.submit "Delete Profile"%> 
+<%end%>
+
+
+

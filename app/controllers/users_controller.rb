@@ -19,6 +19,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(session[:id])
+    @user.update(user_params)
+    if !@user.valid?
+        flash[:errors]= @user.errors.full_messages
+        redirect_to edit_user_path
+    else @user.save
+        redirect_to user_path(@user)
+    end
+  end
+
+
+  def destroy 
+    @user = User.find(sessions[:id])
+    @user.destroy
+    redirect_to '/sign_in'
+  end
 
   def show
     @user=User.find_by(id: params[:id])
