@@ -1,7 +1,7 @@
-<h1>UserEvents#new</h1>
+<h1>UserEvents hello <%= session[:user_id]%><#new</h1>
 <%= form_for @user_event do |f| %>
-    <%= f.collection_select(:user_id, User.all, :id, :first_name) %> <br>
-    <%= f.collection_select(:event_id, Event.all, :id, :city) %><br><br>
+    
+    Click button if you want to register for the event
     <%= f.submit %>
 
 <% end %>

@@ -12,9 +12,6 @@ class UserEventsController < ApplicationController
   end  
 
   def create
-    byebug
-    
-    params2[:user_id]=session[:user_id]
     @user_event=UserEvent.new(params2)
     if @user_event.valid?
       @user_event.save
