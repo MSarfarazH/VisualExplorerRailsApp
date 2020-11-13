@@ -23,6 +23,18 @@ class EventsController < ApplicationController
     end  
   end
 
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    if @event.valid?
+      @event.save
+      redirect_to event_path(@event)
+    else
+      flash[:errors] = @event.errors.full_messages
+      redirect_to edit_event_path(@event)
+    end  
+  end
+
 private
   def event_params
     params.require(:event).permit(:name, :time, :category, :description, :img_url, :location_id)

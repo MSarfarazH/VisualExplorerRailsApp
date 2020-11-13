@@ -5,8 +5,8 @@
 <p> Interested in: <%= @user.interest %> </p><br>
 <p> About me: <%= @user.bio %> </p><br>
 
-
-Create an event: <%= link_to 'Make an event', new_event_path %> <br>  
+Update my profile: <%= link_to 'Update Profile', edit_user_path(@user) %> <br>
+Create an event: <%= link_to 'Make an event', new_event_path %> <br> 
 Find an event from the locations: <%= link_to 'Location', locations_path %><br>
 Logged In As: <%=link_to session[:username], user_path(session)%> 
 <br>

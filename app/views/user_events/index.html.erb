@@ -1,7 +1,15 @@
 <h1>My Events</h1>
-<% @user_events.each do |ue| %>
+<% byebug %>
+<% if !@user_events || @user.user_events.empty? %>
+<h2>No event created</h2>
+<h3><%= link_to "Create an event", new_event_path %></h3>
+<% else %>
+<%  @user_events.each do |ue| %>
     <%= link_to ue.event.name, event_path(ue.event) %><br>
     <h4>Description:<%= ue.event.description %></h4>
     <h4>Time:<%= ue.event.time %> </h4>
     <h4>City: <%= ue.event.location.city %> </h4>
 <% end %>
+<% end %>
+
+Logged In As: <%=link_to session[:username], user_path(session)%> 

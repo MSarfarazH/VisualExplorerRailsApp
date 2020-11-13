@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
-
+  before_action :find_user, only: [:edit, :show, :update] 
   def index
     @users=User.all
+  end
+
+  def show
   end
 
   def new
@@ -12,7 +15,9 @@ class UsersController < ApplicationController
    
     @user=User.new(user_params)
     if @user.valid?
-      @user.save
+       @user.save
+      session[:id] = @user.id
+      session[:username] = @user.username
     redirect_to user_path(@user)
     else
       flash[:errors]=@user.errors.full_messages
@@ -20,8 +25,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
   def update
-    @user = User.find(session[:id])
     @user.update(user_params)
     if !@user.valid?
         flash[:errors]= @user.errors.full_messages
@@ -38,12 +46,14 @@ class UsersController < ApplicationController
     redirect_to '/homepage'
   end
 
-  def show
-    @user=User.find_by(id: session[:id])
-  end
+  
 
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :age, :interest, :bio, :img_url, :username, :password)
+  end
+
+  def find_user
+    @user = User.find_by(id: session[:id])
   end
 end
