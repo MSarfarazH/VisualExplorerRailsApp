@@ -2,7 +2,7 @@
 <hr>
 <%= link_to image_tag(@event.img_url, :size => '300x200')%>
 <hr>
-<p><%=@event.time%>
+
 <br>
 <br>
 <br>
@@ -10,9 +10,8 @@
 <hr>
 <%=@event.description%></p>
 <br>
-Catergory: <br>
-<%=@event.category%>
-Time: <br>
-<%=@event.time%>
+Catergory: <%=@event.category%><br>
+Time: <%= @event.time%><br>
+City: <%=@event.location.city%>
 
 

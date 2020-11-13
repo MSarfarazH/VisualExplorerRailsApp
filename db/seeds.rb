@@ -17,13 +17,11 @@ l4 = Location.create(:city=> "Dallas", :state=> "Texas", :zip_code=> 77789)
 
 #Events
 e1 = Event.create(:name=>"Rock Concert", :category=> "Music", :description=>"Linkin Park is playing", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
-e2 = Event.create(:name=>"Rockets Vs Lakers", :category=> "Sports", :description=>"Finals Rockets vs Lakers", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
-e3 = Event.create(:name=>"History Exibition", :category=> "Educational", :description=>"See the dinosaurs and their era", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
+e2 = Event.create(:name=>"Rockets Vs Lakers", :category=> "Sports", :description=>"Finals Rockets vs Lakers", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l2.id)
+e3 = Event.create(:name=>"History Exibition", :category=> "Educational", :description=>"See the dinosaurs and their era", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l3.id)
 e4 = Event.create(:name=>"Comicon", :category=> "Recreational", :description=>"Houstons 5th ComiCon", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
-e5 = Event.create(:name=>"Professionals Convention", :category=> "Professional", :description=>"Houstons 5th Professional Convention", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
+e5 = Event.create(:name=>"Professionals Convention", :category=> "Professional", :description=>"Houstons 5th Professional Convention", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l4.id)
 
 #User
-u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :password=>"5678")
+u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :username=> "adam_lambert", :password=> "123")
 
-#User Events
-ue1 = UserEvent.create(:user_id=>u1.id, :event_id=>e1.id)

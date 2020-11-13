@@ -4,11 +4,11 @@
 <br>
 <br>
 <%=f.label "Category"%><br>
- <%= f.collection_select(:category, Event.all, :id, :category)%>
+<%=f.text_field :category%>
 <br>
 <br>
 <%=f.label "Description"%><br>
-<%=f.text_field :description%>
+<%=f.text_area :description%>
 <br>
 <br>
 <%=f.label "Time"%><br>
@@ -24,4 +24,10 @@
 <br>
 <br>
 <%=f.submit%>
+<%end%>
+
+<% if flash[:errors]%>
+        <% flash[:errors].each do |error|%>
+        <li><%=error%></li>
+        <%end%>
 <%end%>

@@ -1,12 +1,13 @@
 <h1>Welcome <%=@user.first_name%></h1>
+<p><%= link_to image_tag(@user.img_url, :size => '300x200')%></p><br>
 <p> First Name: <%= @user.first_name %> </p><br>
 <p> Last Name: <%= @user.last_name %> </p><br>
 <p> Interested in: <%= @user.interest %> </p><br>
 <p> About me: <%= @user.bio %> </p><br>
-<p><%= link_to image_tag(@user.img_url, :size => '300x200')%></p><br>
+
 
   
-
+Find an event from the locations: <%= link_to 'Location', locations_path %><br>
 Logged In As: <%=link_to session[:username], user_path(session)%> 
 <br>
 <%= button_to 'log out', {:controller => :sessions, :action => 'destroy'}, :method => :delete, class: "btn btn-primary"%>
