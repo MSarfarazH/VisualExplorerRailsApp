@@ -23,7 +23,7 @@ e4 = Event.create(:name=>"Comicon", :category=> "Recreational", :description=>"H
 e5 = Event.create(:name=>"Professionals Convention", :category=> "Professional", :description=>"Houstons 5th Professional Convention", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
 
 #User
-# u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :password=>"5678")
+u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :password=>"5678")
 
 #User Events
-# ue1 = UserEvent.create(:user_id=>u1.id, :event_id=>e1.id)
+ue1 = UserEvent.create(:user_id=>u1.id, :event_id=>e1.id)

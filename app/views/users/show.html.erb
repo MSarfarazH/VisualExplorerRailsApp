@@ -12,7 +12,9 @@ Logged In As: <%=link_to session[:username], user_path(session)%>
 <%= button_to 'log out', {:controller => :sessions, :action => 'destroy'}, :method => :delete, class: "btn btn-primary"%>
 <hr>
 <% if session[:id] == @user.id %>
- <%=form_tag @user, method: :destroy do |f|%>
- <%=f.submit "Delete Profile"%> 
-<%end%>
+<%= form_tag user_path(@user.id), method: "delete" do %>
+ <%= submit_tag 'Delete Profile'%>
+ <% end %>
+ 
+ <%# <%=f.submit "Delete Profile"%>  
 <%end%>
