@@ -2,3 +2,7 @@
 <%@locations.each do |location|%>
 <li><%= link_to location.city, event_path(location.events[0]) %></li>
 <%end%>
+
+<hr>
+Logged In As: <%=link_to session[:username], user_path(session)%> 
+<br>

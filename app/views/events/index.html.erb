@@ -8,5 +8,9 @@ Time: <%=event.time%></h4></ul>
 <br>
 <%end%>
 
-
+<hr>
+Logged In As: <%=link_to session[:username], user_path(session)%> 
+<br>
+<%= button_to 'log out', {:controller => :sessions, :action => 'destroy'}, :method => :delete, class: "btn btn-primary"%>
+ 
 

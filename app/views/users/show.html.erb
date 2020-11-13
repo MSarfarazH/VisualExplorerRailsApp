@@ -6,7 +6,9 @@
 <p> About me: <%= @user.bio %> </p><br>
 
 
-  
+
+<%= link_to 'See All Events', events_path%><br>
+<br>
 Find an event from the locations: <%= link_to 'Location', locations_path %><br>
 Logged In As: <%=link_to session[:username], user_path(session)%> 
 <br>
@@ -15,7 +17,8 @@ Logged In As: <%=link_to session[:username], user_path(session)%>
 <% if session[:id] == @user.id %>
 <%= form_tag user_path(@user.id), method: "delete" do %>
  <%= submit_tag 'Delete Profile'%>
- <% end %>
+<% end %>
+<% end %>
  
- <%# <%=f.submit "Delete Profile"%>  
-<%end%>
+
+

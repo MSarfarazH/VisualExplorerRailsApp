@@ -95,5 +95,5 @@ FOR TABLE & SECTIONS RESERVATIONS
 e4 = Event.create(:name=>"Nero (Dj set) at It'll Do Club", :category=> "Music", :description=>"Nero (Dj set) at It'll Do Club", :time=>Time.new(2020, 11, 19, 21, 00), :img_url=>"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F116044137%2F360334782811%2F1%2Foriginal.20201027-234709?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=7fa3e567bcccdb25b6cbc5662f87c254", :location_id=>l4.id)
 
 #User
-u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :username=> "adam_lambert", :password=> "123")
+# u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :username=> "adam_lambert", :password=> "123")
 
