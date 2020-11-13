@@ -19,5 +19,9 @@
 <%=f.text_field :img_url%>
 <br>
 <br>
+<%=f.label "Location"%><br>
+<%= f.collection_select(:location_id, Location.all, :id, :city)%>
+<br>
+<br>
 <%=f.submit%>
 <%end%>

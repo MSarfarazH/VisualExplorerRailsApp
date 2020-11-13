@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   resources :user_events, only: [:show, :index, :new, :create]
-  resources :users, only: [:show, :index, :new, :create]
-  resources :events, only: [:show, :index, :new, :create]
+  resources :users
+  resources :events
   resources :locations, only: [:index]
   
 

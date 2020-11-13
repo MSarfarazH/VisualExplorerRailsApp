@@ -11,6 +11,9 @@ User.destroy_all
 UserEvent.destroy_all
 #Locations
 l1 = Location.create(:city=> "Houston", :state=> "Texas", :zip_code=> 77888)
+l2 = Location.create(:city=> "Austin", :state=> "Texas", :zip_code=> 77123)
+l3 = Location.create(:city=> "San Antonio", :state=> "Texas", :zip_code=> 77456)
+l4 = Location.create(:city=> "Dallas", :state=> "Texas", :zip_code=> 77789)
 
 #Events
 e1 = Event.create(:name=>"Rock Concert", :category=> "Music", :description=>"Linkin Park is playing", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
@@ -20,7 +23,7 @@ e4 = Event.create(:name=>"Comicon", :category=> "Recreational", :description=>"H
 e5 = Event.create(:name=>"Professionals Convention", :category=> "Professional", :description=>"Houstons 5th Professional Convention", :time=>Time.new(2020, 9, 30, 13, 00), :img_url=>"", :location_id=>l1.id)
 
 #User
-u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert")
+# u1 = User.create(:first_name=>"Adam", :last_name=> "Lambert", :password=>"5678")
 
 #User Events
-ue1 = UserEvent.create(:user_id=>u1.id, :event_id=>e1.id)
+# ue1 = UserEvent.create(:user_id=>u1.id, :event_id=>e1.id)

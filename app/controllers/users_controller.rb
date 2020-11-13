@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+   
     @user=User.new(user_params)
     if @user.valid?
       @user.save
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
   def destroy 
     @user = User.find(sessions[:id])
     @user.destroy
-    redirect_to '/sign_in'
+    redirect_to '/homepage'
   end
 
   def show
@@ -43,6 +44,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :age, :interest, :bio, :img_url, :username, :password_digest)
+    params.require(:user).permit(:first_name, :last_name, :age, :interest, :bio, :img_url, :username, :password)
   end
 end
