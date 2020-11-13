@@ -1,4 +1,4 @@
 <h1>Locations</h1>
 <%@locations.each do |location|%>
-<%= location.city %>
+<li><%= link_to location.city, event_path(location.events[0]) %></li>
 <%end%>

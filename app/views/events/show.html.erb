@@ -1,6 +1,6 @@
 <h1><%=@event.name%></h1>
 <hr>
-<%= link_to image_tag(@event.img_url, :size => '300x200')%>
+<%= link_to image_tag(@event.img_url, :size => '500x500')%>
 <hr>
 
 <br>
@@ -8,10 +8,14 @@
 <br>
 <h2>Description</h2>
 <hr>
-<%=@event.description%></p>
+<p><%=@event.description%></p>
 <br>
+<h4>
 Catergory: <%=@event.category%><br>
 Time: <%= @event.time%><br>
 City: <%=@event.location.city%>
 
+Sign up: 
+
+</h4>
 
