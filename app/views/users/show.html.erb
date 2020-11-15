@@ -1,16 +1,21 @@
-<h1>Welcome <%=@user.first_name%></h1>
-<p><%= link_to image_tag(@user.img_url, :size => '300x200')%></p><br>
-<p> First Name: <%= @user.first_name %> </p><br>
+<pre>Welcome <%=@user.first_name%></h1>
+<h4><p><%= link_to image_tag(@user.img_url, :size => '200x200')%></p><br>
+<p> <b>First Name:</b> <%= @user.first_name %> </p><br>
 <p> Last Name: <%= @user.last_name %> </p><br>
 <p> Interested in: <%= @user.interest %> </p><br>
-<p> About me: <%= @user.bio %> </p><br>
+<p> About me: <%= @user.bio %> </p><br></pre>
 
 
 
+<%= link_to 'Create A New Event', new_event_path%><br>
+<br>
 <%= link_to 'See All Events', events_path%><br>
 <br>
 Find an event from the locations: <%= link_to 'Location', locations_path %><br>
-Logged In As: <%=link_to session[:username], user_path(session)%> 
+<br>
+<br>
+Logged In As: <%=link_to session[:username], user_path(session)%><br>
+Update my profile: <%= link_to 'Update Profile', edit_user_path(@user) %> <br>
 <br>
 <%= button_to 'log out', {:controller => :sessions, :action => 'destroy'}, :method => :delete, class: "btn btn-primary"%>
 <hr>
@@ -19,6 +24,6 @@ Logged In As: <%=link_to session[:username], user_path(session)%>
  <%= submit_tag 'Delete Profile'%>
 <% end %>
 <% end %>
- 
+ <hr>
 
 

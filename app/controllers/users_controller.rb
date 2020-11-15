@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :find_user, only: [:edit, :show, :update]
   def index
     @users=User.all
   end
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(session[:id])
     @user.update(user_params)
     if !@user.valid?
         flash[:errors]= @user.errors.full_messages
@@ -33,6 +32,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
 
   def destroy 
     @user = User.find(params[:id])
@@ -41,11 +43,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find_by(id: session[:id])
+    
   end
 
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :age, :interest, :bio, :img_url, :username, :password)
+  end
+
+  def find_user
+    @user = User.find_by(id: session[:id])
   end
 end
